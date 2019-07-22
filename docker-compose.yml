@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+
+  apache-php:
+    image: webdevops/php-apache-dev:alpine-php7
+    restart: on-failure:3
+    ports:
+      - "80:80"
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/web
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - type: bind
+        source: ./docker/php.ini
+        target: /opt/docker/etc/php/php.ini
+    working_dir: /app

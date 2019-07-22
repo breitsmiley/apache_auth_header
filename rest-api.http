@@ -1,0 +1,7 @@
+
+### SignUp
+POST http://localhost/1.php
+Accept: application/json
+Content-Type: application/json
+Authorization: 1111
+###
